@@ -11,5 +11,6 @@ Use your IoT demo kit, connect to Cisco’s IoTDC data service and process your 
 
 * Follow the Code examples in GitHub to get you code started.
 
-Show off Your Solution
+## Show off Your Solution
+
 Come to the Mini-Hack Desk area to have your results verified by a DevNet Create Staffer.
