@@ -1,0 +1,61 @@
+
+<div id="content">
+  <div id="container">
+
+      <link rel="stylesheet" href="https://code.s4d.io/widget-space/latest/main.css">
+      <script src="https://code.s4d.io/widget-space/latest/bundle.js"></script>
+
+      <div style="background-image: url(../public/img/devnet-logo.jpg); height:200; width:200; float:left"></div>
+
+      <!-- replace the above div with the below div -->
+
+      <!-- <div
+        style="height:350; width:200; float:left"
+        class="ciscospark-widget"
+        data-toggle="ciscospark-space"
+        data-access-token="YOUR TOKEN HERE"
+        data-initial-activity="meet"
+        data-to-person-email="TARGET USER EMAIL HERE"
+        ></div> -->
+
+      <div style="margin-left:200">
+        <h1>DevNet Create Cafe</h1>
+        <p>Enjoy our speedy WiFi and a cup of joe.</p>
+        <hr>
+        <P>Please check-in via <b>Cisco Spark</b> video call to receive your complimentary wi-fi username and password</p>
+      </div>
+
+
+    <div id="continue">
+      <form action={{login_url}} method="post" class="form col-md-12 center-block">
+        <input type="hidden" name="success_url" value={{success_url}} />
+        <div class="form-group">
+          <div class="error">
+            {{recent_error}}
+          </div>
+
+          <input class="form-control input-lg" type="text" name="username" placeholder="Username or email">
+          <i class="icon-user icon-large"></i>
+        </div>
+        <div class="form-group">
+          <input class="form-control input-lg" type="password" name="password" placeholder="Password">
+          <i class="icon-lock icon-large"></i>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+    </div>
+  </div>
+  <div class="footer">
+      <p>Client IP: {{client_ip}}</p>
+      <p>Client MAC: {{client_mac}}</p>
+      <p>AP Tags: {{ap_tags}}</p>
+      <p>AP Name: {{ap_name}}</p>
+    <h3>POWERED BY</h3>
+    <img class="text-center" src="/img/cisco-meraki-gray.png" style="width:10%; margin:10px;">
+  </div>
+</div>
