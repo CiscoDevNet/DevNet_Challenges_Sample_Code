@@ -7,7 +7,7 @@ username = "your username"
 password = "password"
 
 token = "Bearer <token>"
-email_address = "<room id>"
+email_address = "<email address tied to your spark account>"
 
 
 def spark_it(message, bot_token, email):
