@@ -1,0 +1,53 @@
+
+<div id="content">
+  <div id="container">
+
+      <link rel="stylesheet" href="https://code.s4d.io/widget-space/latest/main.css">
+      <script src="https://code.s4d.io/widget-space/latest/bundle.js"></script>
+
+      <div style="background-image: url(../public/img/devnet-logo.jpg); height:200; width:200; float:left"></div>
+
+      <!-- replace the above div with the below div -->
+
+
+      <div style="margin-left:200">
+        <h1>Welcome to the Meraki House</h1>
+        <p>Connect to your own wifi!</p>
+        <hr>
+        <P>Enter your own SSID (be nice) and your own wifi password.  Once it's setup you can connect and let your friends know!</p>
+      </div>
+
+
+    <div id="continue">
+      <form action={{success_url}} method="get" class="form col-md-12 center-block">
+
+        <div class="form-group">
+          <div class="error">
+            {{recent_error}}
+          </div>
+
+          <input class="form-control input-lg" type="text" name="ssid" placeholder="SSID Name">
+          <i class="icon-user icon-large"></i>
+        </div>
+        <div class="form-group">
+          <input class="form-control input-lg" type="password" name="wifipass" placeholder="Wifi Password">
+          <i class="icon-lock icon-large"></i>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-lg btn-block">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+    </div>
+  </div>
+  <div class="footer">
+      <p>Client IP: {{client_ip}}</p>
+      <p>Client MAC: {{client_mac}}</p>
+      <p>AP Tags: {{ap_tags}}</p>
+      <p>AP Name: {{ap_name}}</p>
+    <h3>POWERED BY</h3>
+    <img class="text-center" src="/img/cisco-meraki-gray.png" style="width:10%; margin:10px;">
+  </div>
+</div>
