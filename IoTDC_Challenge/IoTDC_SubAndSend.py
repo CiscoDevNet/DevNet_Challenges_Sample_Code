@@ -1,13 +1,21 @@
 import pika
 import ssl
 import requests
+import json
 
 
-username = "your username"
+# This is the Username and password that was supplied with the kit
+username = "devnet_iot+userX@cisco.com"
 password = "password"
 
+# You need to Create a bot at https://developer.ciscospark.com and paste your bot token here
 token = "Bearer <token>"
-email_address = "<email address tied to your spark account>"
+
+# This is the e-mail address associated with your Spark Account
+email_address = "Your_Handle_HERE@cisco.com"
+
+# This is the IoTDC organization ID supplied with your kit
+orgID = 1880
 
 
 def spark_it(message, bot_token, email):
@@ -19,14 +27,14 @@ def spark_it(message, bot_token, email):
               "Content-Type": "application/json"}
 
     api_url = "/v1/messages/"
-    data = {"email": email,
+    data = {"toPersonEmail": email,
             "text": message}
 
     spark_url = start_url + api_url
 
     spark_message = requests.post(spark_url, headers=header, data=json.dumps(data), verify=True)
 
-    return spark_message
+    return spark_message.text
 
 
 creds = pika.PlainCredentials(username, password)
@@ -43,7 +51,7 @@ channel.queue_declare(queue=queue_name, passive=False,
                       durable=False, exclusive=False, auto_delete=False)  # Declare a queue
 
 
-channel.queue_bind(exchange="24-EXC",
+channel.queue_bind(exchange="%s-EXC" % orgID,
                    queue=queue_name,
                    routing_key="dev2app",
                    )
@@ -52,8 +60,12 @@ print("Connected to IoTDC")
 
 
 def callback(ch, method, properties, body):
-    print(" [x] Received %r" % body)
-    print(spark_it(body, token, email_address))
+    msg = body.decode("utf-8")[0]
+    print(" [x] Received %r" % msg)
+    text = ""
+    if msg == "1":
+        text = "Alert Triggered"
+    print(spark_it(text, token, email_address))
 
 channel.basic_consume(callback,
                       queue=queue_name,
