@@ -12,10 +12,10 @@ password = "password"
 token = "Bearer <token>"
 
 # This is the e-mail address associated with your Spark Account
-email_address = "Your_Handle_HERE@cisco.com"
+email_address = "Your_E-mail_address_here_HERE@cisco.com"
 
 # This is the IoTDC organization ID supplied with your kit
-orgID = 1880
+orgID = <your org id here>
 
 
 def spark_it(message, bot_token, email):
