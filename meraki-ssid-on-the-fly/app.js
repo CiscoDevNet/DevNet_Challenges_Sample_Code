@@ -163,10 +163,10 @@ app.get('/success', function (req, res) {
 
 
   var options = { method: 'GET',
-    url: 'https://dashboard.meraki.com/api/v0/organizations/549236/networks/L_646829496481092083/ssids',
+    url: 'https://n6.meraki.com/api/v0/organizations/668173/networks/N_566327653141847083/ssids',
     headers:
      {
-       'x-cisco-meraki-api-key': 'c0b9de1eefb894c77073cc01e529e93c57cb071f'
+       'x-cisco-meraki-api-key': 'a49b32a3e1198f9bab1219c02d236e14c2147415'
      }
    };
 
@@ -188,12 +188,12 @@ app.get('/success', function (req, res) {
 
     console.log(req.query.ssid + " " + req.query.wifipass);
     options = {
-      url: 'https://n149.meraki.com/api/v0/networks/L_646829496481092083/ssids/' + number,
+      url: 'https://n6.meraki.com/api/v0/organizations/668173/networks/N_566327653141847083/ssids/' + number,
       method: 'PUT',
       headers:
        {
          'content-type': 'application/json',
-         'x-cisco-meraki-api-key': 'c0b9de1eefb894c77073cc01e529e93c57cb071f'
+         'x-cisco-meraki-api-key': 'a49b32a3e1198f9bab1219c02d236e14c2147415'
        },
       body:
        { name: req.query.ssid,
