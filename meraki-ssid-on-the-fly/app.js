@@ -163,10 +163,10 @@ app.get('/success', function (req, res) {
 
 
   var options = { method: 'GET',
-    url: 'https://n6.meraki.com/api/v0/organizations/668173/networks/N_566327653141847083/ssids',
+    url: 'update the appropriate url to get the ssids for the GSX On the fly Minihack network',
     headers:
      {
-       'x-cisco-meraki-api-key': 'a49b32a3e1198f9bab1219c02d236e14c2147415'
+       'x-cisco-meraki-api-key': '<add the Sandbox api key>'
      }
    };
 
@@ -188,12 +188,12 @@ app.get('/success', function (req, res) {
 
     console.log(req.query.ssid + " " + req.query.wifipass);
     options = {
-      url: 'https://n6.meraki.com/api/v0/organizations/668173/networks/N_566327653141847083/ssids/' + number,
+      url: 'update the appropriate url to get the ssids for the GSX On the fly Minihack network' + number,
       method: 'PUT',
       headers:
        {
          'content-type': 'application/json',
-         'x-cisco-meraki-api-key': 'a49b32a3e1198f9bab1219c02d236e14c2147415'
+         'x-cisco-meraki-api-key': '<add the Sandbox api key>'
        },
       body:
        { name: req.query.ssid,
