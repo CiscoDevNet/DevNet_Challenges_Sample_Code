@@ -473,7 +473,7 @@ def cmdcreatebackup(p_apikey, p_orglist):
 
                     m = MultipartEncoder({'roomId': 'Y2lzY2.....',
                                           'text': 'L3 Rules Backup',
-                                          'files': (filename, open('filename', 'rb'),
+                                          'files': (filename, open(filename, 'rb'),
                                           'image/png')})
 
                     r = requests.post('https://api.ciscospark.com/v1/messages', data=m,
